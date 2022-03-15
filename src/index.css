@@ -5,9 +5,264 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  text-align: center;
+  
+}
+
+*{
+  box-sizing: border-box;
+  
+}
+.container{
+ 
+  width: 100%;
+  
+
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.cardListContainer{
+margin: 20px;
+ padding: 10px;
+  border-radius: 20px;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: rgb(244 244 244);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cardImage{
+  flex: 2 1 0%;
+  width: 100%;
+ 
+}
+
+html {
+  background: #FAF7F2;
+  background-image: url(https://s3.postimg.org/s1n3ji1ur/paper_fibers_2_X.png);
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.subtle {
+  color: #aaa;
+}
+
+.cardContainer {
+  margin: 15px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  
+
+}
+.cardContainer img{
+  border-radius: 10px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card {
+  background-color: #fff;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+  z-index: 1;
+}
+
+.cardBody {
+ 
+
+}
+
+.cardNumber {
+  margin-top: 15px;
+}
+
+.cardCircle {
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 22px;
+  font-size: 12px;
+  height: 25px;
+  text-align: center;
+  width: 25px;
+}
+
+.cardAuthor {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .5px;
+  margin: 15px 0 0;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 60px;
+  margin: 10px 0;
+}
+
+.cardDescription {
+  display: inline-block;
+  font-weight: 300;
+  line-height: 22px;
+  margin: 10px 0;
+}
+
+.cardRead {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin: 5px 0 20px;
+  position: relative;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.cardRead:after {
+  background-color: #b8bddd;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 9px;
+  width: 75%;
+}
+
+.cardTag {
+  float: right;
+  margin: 5px 0 0;
+}
+
+.cardMedia {
+  float: right;
+}
+
+.cardShadow {
+  background-color: #fff;
+  box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1), 0 0 100px 3px rgba(0, 0, 0, .25);
+  height: 1px;
+  margin: -1px auto 0;
+  width: 80%;
+  z-index: -1;
+}
+
+
+
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+:root {
+  --bg-page: #1a1a1a;
+  --text-color: #f3f3f3;
+  --card-bg: #202020;
+  --icon-bg: #45423C;
+  --blue: #0870f8;
+  --blue-rgb: 8, 112, 248;
+  --orange: #FF9232;
+  --g-purple: linear-gradient(30deg, #85f, #9966ff);
+  --g-yellow: linear-gradient(30deg, #fc0, #fc0);
+  --g-red: linear-gradient(30deg, #f36, #f24);
+  --g-blue: linear-gradient(30deg, #0cf, #0af);
+  --g-purple: linear-gradient(30deg, #85f, #9966ff);
+  --range: 0%;
+  --shadow: rgba(0, 6, 39, .1);
+  --light-shadow: rgba(255, 255, 255, .8);
+  --light-shadow-2: rgba(255, 255, 255, .1);
+}
+
+
+.hide {
+  display: none;
+  visibility: hidden;
+  height: 0;
+}
+
+.pagination\:container {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.arrow\:text {
+  display: block;
+  vertical-align: middle;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.pagination\:number {
+  --size: 32px;
+  --margin: 6px;
+  margin: 0 var(--margin);
+  border-radius: 6px;
+  background: #202020;
+  max-width: auto;
+  min-width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 10px;
+  color: white;
+}
+@media (hover: hover) {
+  .pagination\:number:hover {
+    background: #282828;
+  }
+}
+.pagination\:number:active {
+  background: #282828;
+}
+
+
+
+.active{
+  background-color: #f24;
 }

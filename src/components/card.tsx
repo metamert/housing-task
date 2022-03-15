@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { EpisodeDetailed, LocationDetailed, Result } from '../types';
-const ANIMATION_URL="https://assets7.lottiefiles.com/packages/lf20_WXXDFD.json"
+
+
 export interface ICardProps {
     item: Result
 }
@@ -56,33 +57,36 @@ export default function App (props: ICardProps) {
        }
        
 
+const {name,species}=item
+//amount of recidence detailedData?.location.residents.length
+//episode name
+
+//name speices location name dimension amount of recidence
+//name chapters
 
 
   return (
-    <div key={item.id} className="cardContainer">
-          <div className="cardImage">
-            <img src={item.image} alt={item.name} />
-          </div>
-          <div className="cardContent">
-            <div className="section">
-           
-                <h2>{item.name}</h2>
-              
-              <span className="status">
-                <span className="status__icon"></span> {item.species}
-              </span>
-            </div>
-            {loading?<div>loading....</div>:[<div className="section">
-              <span className="text-gray">Last known location:</span>
-          {detailedData?.location.name}- {detailedData?.location.type}
-          
-            </div>,
-            <div className="section">
-              <span className="text-gray">First seen in:</span>
-              {detailedData?.episode.episode}-{detailedData?.episode.name}
-              
-            </div>]}
-          </div>
-        </div>
+    <div className="cardContainer">
+   
+    <img src={item.image} alt="" className="cardMedia" />
+      <div className="cardBody">
+        
+        <span className="cardAuthor subtle">{species}</span>
+        <h2 className="cardTitle">{name}</h2>
+        <span className="cardDescription subtle">Amount of recidence : {detailedData?.location.residents.length} <br/>
+         Location : {detailedData?.location.name}   
+
+        
+        </span>
+     
+        <div className="cardRead">{detailedData?.episode.episode}</div>
+     
+      </div>
+     
+    
+    <div className="cardShadow"></div>
+  </div>
   );
 }
+
+
