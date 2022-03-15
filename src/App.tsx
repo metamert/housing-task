@@ -1,24 +1,48 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Result, RootObject } from './types';
+import CardList from './components/cardList';
+
+
+
 
 function App() {
+const [state,setState]=React.useState<Array<Result>>([])
+
+
+
+
+
+
+async function http<T>(
+  request: RequestInfo
+): Promise<T> {
+  const response = await fetch(request);
+  const body = await response.json();
+  return body;
+}
+
+
+useEffect(() => {
+ FetchData()
+}, [])
+
+
+const FetchData = async () => {
+
+  
+  const data = await http<RootObject>(
+    "https://rickandmortyapi.com/api/character/?limit=10"
+  );
+
+  setState(data.results)
+}
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+     <CardList datas={state} />
     </div>
   );
 }
