@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import { Result, RootObject } from './types';
 import CardList from './components/cardList';
-
+ const ANIMATION_URL="https://embed.lottiefiles.com/animation/9916"
 
 
 
 function App() {
 const [state,setState]=React.useState<Array<Result>>([])
+const [loading,setLoading]=React.useState<Boolean>(true)
 
 
 
@@ -30,19 +31,25 @@ useEffect(() => {
 
 
 const FetchData = async () => {
-
+try {
   
   const data = await http<RootObject>(
-    "https://rickandmortyapi.com/api/character/?limit=10"
+    "https://rickandmortyapi.com/api/character/"
   );
-
+console.log(data.results)
   setState(data.results)
+} catch (error) {
+  
+}finally{
+  setLoading(false)
+}
+  
 }
 
 
   return (
     <div className="App container">
-     <CardList datas={state} />
+     {loading?<div >loading...</div>:<CardList datas={state} />}
     </div>
   );
 }

@@ -35,3 +35,25 @@
         info: Info;
         results: Result[];
     }
+
+
+
+    interface LocationDetailed {
+        id: number;
+        name: string;
+        type: string;
+        dimension: string;
+        residents: string[];
+        url: string;
+        created: Date;
+    }
+
+    export interface EpisodeDetailed {
+        id: number;
+        name: string;
+        air_date: string;
+        episode: string;
+        characters: string[];
+        url: string;
+        created: Date;
+    }

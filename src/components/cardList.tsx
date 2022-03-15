@@ -9,7 +9,7 @@ const CardList = (props: Props) => {
   return (
     <div className="cardListContainer">
       {props.datas.map((item) => (
-        <Card item={item}/>
+        <Card key={item.id} item={item}/>
       ))}
     </div>
   );
